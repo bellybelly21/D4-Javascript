@@ -25,7 +25,7 @@ pets: true
 
 {
 nombre: 'Casa en venta Las Condes',
-src: '../img/propiedad-venta3.jpg',
+src: 'assets/img/propiedad-venta3.jpg',
 descripcion: 'Extraordinaria casa contemporánea en el exclusivo barrio San Damián en Las Condes, del destacado arquitecto Christian de Groote.',
 ubicacion: 'Las Condes, RM',
 superficie: '1.425 m2',
@@ -37,7 +37,7 @@ pets: true
 
 {
 nombre: 'Exclusiva Villa/Chalet en Lo Barnechea',
-src: '../img/propiedad-venta4.jpg',
+src: '/assets/img/propiedad-venta4.jpg',
 descripcion: 'Casa italiana del arquitecto Jaime Burgos, ubicada en sector Los Nogales, con finas terminaciones y grandes espacios.',
 ubicacion: 'Lo Barnechea, RM',
 superficie: '675 m2',
