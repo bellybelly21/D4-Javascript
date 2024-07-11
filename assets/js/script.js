@@ -146,6 +146,19 @@ pets: false
 }
 ];
 
+document.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname;
+
+    if (path.includes('index.html')) {
+        fichaPropiedades(propiedadesVenta, 3, ".ficha-venta");
+        fichaPropiedades(propiedadesAlquiler, 3, ".ficha-alquiler");
+    } else if (path.includes('propiedades_venta.html')) {
+        fichaPropiedades(propiedadesVenta, 6, ".ficha-venta");
+    } else if (path.includes('propiedades_alquiler.html')) {
+        fichaPropiedades(propiedadesAlquiler, 6, ".ficha-alquiler");
+    }
+});
+
 function fichaPropiedades(propiedades, numPropiedades, contenedorClase) {
     const divFicha = document.querySelector(contenedorClase);
     
@@ -178,15 +191,3 @@ function fichaPropiedades(propiedades, numPropiedades, contenedorClase) {
     divFicha.innerHTML = template;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const path = window.location.pathname;
-
-    if (path.includes('index.html')) {
-        fichaPropiedades(propiedadesVenta, 3, ".ficha-venta");
-        fichaPropiedades(propiedadesAlquiler, 3, ".ficha-alquiler");
-    } else if (path.includes('propiedades_venta.html')) {
-        fichaPropiedades(propiedadesVenta, 6, ".ficha-venta");
-    } else if (path.includes('propiedades_alquiler.html')) {
-        fichaPropiedades(propiedadesAlquiler, 6, ".ficha-alquiler");
-    }
-});
