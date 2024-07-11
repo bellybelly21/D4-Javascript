@@ -99,7 +99,7 @@ box-sizing: inherit;
 
 .hero-content{
     align-content: flex-end;
-    background-image: url(../img/hero-image.webp);
+    background-image: url('../img/hero-image.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
