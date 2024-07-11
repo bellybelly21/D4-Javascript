@@ -146,11 +146,6 @@ pets: false
 }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    fichaPropiedades(propiedadesVenta, 6, ".ficha-venta");
-    fichaPropiedades(propiedadesAlquiler, 6, ".ficha-alquiler");
-});
-
 function fichaPropiedades(propiedades, numPropiedades, contenedorClase) {
     const divFicha = document.querySelector(contenedorClase);
     
