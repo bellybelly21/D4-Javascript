@@ -189,8 +189,4 @@ function fichaPropiedades(propiedades, numPropiedades, contenedorClase) {
     }
     
     divFicha.innerHTML = template;
-}
-
-
-fichaPropiedades(propiedadesVenta, 3, ".ficha-venta");
-fichaPropiedades(propiedadesAlquiler, 3, ".ficha-alquiler");
+};
