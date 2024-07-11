@@ -146,19 +146,6 @@ pets: false
 }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    const path = window.location.pathname;
-
-    if (path.includes('index.html')) {
-        fichaPropiedades(propiedadesVenta, 3, ".ficha-venta");
-        fichaPropiedades(propiedadesAlquiler, 3, ".ficha-alquiler");
-    } else if (path.includes('propiedades_venta.html')) {
-        fichaPropiedades(propiedadesVenta, 6, ".ficha-venta");
-    } else if (path.includes('propiedades_alquiler.html')) {
-        fichaPropiedades(propiedadesAlquiler, 6, ".ficha-alquiler");
-    }
-});
-
 function fichaPropiedades(propiedades, numPropiedades, contenedorClase) {
     const divFicha = document.querySelector(contenedorClase);
     
@@ -190,3 +177,32 @@ function fichaPropiedades(propiedades, numPropiedades, contenedorClase) {
     
     divFicha.innerHTML = template;
 };
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const path = window.location.pathname;
+
+    const obtenerPropiedadesVenta = async () => {
+        return new Promise((resolve) => {
+            setTimeout(() => resolve(propiedadesVenta), 1000);
+        });
+    };
+
+    const obtenerPropiedadesAlquiler = async () => {
+        return new Promise((resolve) => {
+            setTimeout(() => resolve(propiedadesAlquiler), 1000);
+        });
+    };
+
+    if (path.includes('index.html')) {
+        const propiedadesVenta = await obtenerPropiedadesVenta();
+        const propiedadesAlquiler = await obtenerPropiedadesAlquiler();
+        fichaPropiedades(propiedadesVenta, 3, ".ficha-venta");
+        fichaPropiedades(propiedadesAlquiler, 3, ".ficha-alquiler");
+    } else if (path.includes('propiedades_venta.html')) {
+        const propiedadesVenta = await obtenerPropiedadesVenta();
+        fichaPropiedades(propiedadesVenta, 6, ".ficha-venta");
+    } else if (path.includes('propiedades_alquiler.html')) {
+        const propiedadesAlquiler = await obtenerPropiedadesAlquiler();
+        fichaPropiedades(propiedadesAlquiler, 6, ".ficha-alquiler");
+    }
+});
